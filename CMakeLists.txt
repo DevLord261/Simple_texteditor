@@ -4,7 +4,6 @@ project(Simple_texteditor)
 set(CMAKE_CXX_STANDARD 23)
 
 find_package(wxWidgets REQUIRED COMPONENTS core base)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 
 # Include wxWidgets headers
 include(${wxWidgets_USE_FILE})
