@@ -16,7 +16,7 @@ mainFrame::mainFrame() : wxFrame(nullptr, wxID_ANY, "Hello World",wxPoint(50,50)
 
 
     wxIcon *icon=new wxIcon();
-    icon->LoadFile("/resources/myicon.png",wxBITMAP_TYPE_PNG);
+    icon->LoadFile("/home/unkown/CLionProjects/wx-texteditor/resources/myicon.png",wxBITMAP_TYPE_PNG);
     SetIcon(*icon);
 
 
