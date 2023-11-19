@@ -11,6 +11,7 @@
 #include "wx/richtext/richtextctrl.h"
 #include "wx/textfile.h"
 #include "wx/stdpaths.h"
+#include "wx/stc/stc.h"
 
 class wx_frame :public wxApp {
 public:
@@ -25,14 +26,10 @@ private:
     void OnAbout(wxCommandEvent& event);
     void LoadContent(wxCommandEvent& event);
     void SaveContent(wxCommandEvent& event);
+    void OnSize(wxSizeEvent& event);
     wxTextCtrl *text;
     wxString fileName;
-    //wxDECLARE_EVENT_TABLE();
-    enum
-    {
-        ID_Hello = 1,
-        ID_OPEN=2
-    };
+
 };
 
 
