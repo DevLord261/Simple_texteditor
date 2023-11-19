@@ -14,9 +14,19 @@ bool wx_frame::OnInit() {
 
 mainFrame::mainFrame() : wxFrame(nullptr, wxID_ANY, "Hello World",wxPoint(50,50),wxSize(800,600)){
 
+    // Get the path to the executable
+    wxString exePath = wxStandardPaths::Get().GetExecutablePath();
+    // Extract the directory from the executable path
+    wxString projectDir = wxPathOnly(exePath);
+
+    // Navigate up one level to the project root
+    wxString projectRoot = wxPathOnly(projectDir);
+
+    // Construct the relative path to the icon file in the resources directory
+    wxString iconPath = projectRoot + wxFILE_SEP_PATH + wxT("resources/myicon.png");
 
     wxIcon *icon=new wxIcon();
-    icon->LoadFile("/home/unkown/CLionProjects/wx-texteditor/resources/myicon.png",wxBITMAP_TYPE_PNG);
+    icon->LoadFile(iconPath,wxBITMAP_TYPE_PNG);
     SetIcon(*icon);
 
 

@@ -10,6 +10,7 @@
 #include "wx/wfstream.h"
 #include "wx/richtext/richtextctrl.h"
 #include "wx/textfile.h"
+#include "wx/stdpaths.h"
 
 class wx_frame :public wxApp {
 public:
