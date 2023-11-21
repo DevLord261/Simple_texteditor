@@ -9,6 +9,7 @@ include_directories(header src resources)
 
 file(GLOB MY_SOURCES_FILES src/*.cpp)
 file(GLOB MY_HEADER_FILES header/*.h)
-add_executable(${PROJECT_NAME} ${MY_SOURCES_FILES} ${MY_HEADER_FILES})
+add_executable(${PROJECT_NAME} ${MY_SOURCES_FILES} ${MY_HEADER_FILES}
+)
 
 target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})

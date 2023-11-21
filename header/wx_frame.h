@@ -31,6 +31,7 @@ private:
     wxStyledTextCtrl *nbtext;
     wxString fileName;
     wxBoxSizer *Sizer;
+    void Createeditor();
 
 };
 

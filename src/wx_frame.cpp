@@ -12,6 +12,23 @@ bool wx_frame::OnInit() {
     return true;
 }
 
+void mainFrame::Createeditor() {
+    nbtext = new wxStyledTextCtrl(this,wxID_ANY,wxDefaultPosition,wxDefaultSize,0,"");
+    nbtext->SetLexer(wxSTC_LEX_CPP);
+    nbtext->StyleSetForeground(wxSTC_C_IDENTIFIER, wxColour(128, 0, 0)); // Green for functions/methods
+    nbtext->StyleSetForeground(wxSTC_C_NUMBER, wxColour(0, 0, 255)); // Blue for functions/methods
+    // Enable syntax highlighting
+    nbtext->StyleSetForeground(wxSTC_C_STRING, wxColour(0, 128, 0)); // Green for strings
+    nbtext->StyleSetForeground(wxSTC_C_COMMENT, wxColour(128, 128, 128)); // Gray for comments
+    nbtext->StyleSetBold(wxSTC_C_WORD, true); // Bold for keywords
+    // Set margin type for line numbers
+    nbtext->SetMarginType(1, wxSTC_MARGIN_NUMBER);
+    nbtext->SetUseVerticalScrollBar(true);
+    // Enable line number margin
+    nbtext->SetMarginMask(1,0);
+
+}
+
 mainFrame::mainFrame() : wxFrame(nullptr, wxID_ANY, "Hello World",wxPoint(50,50),wxSize(800,600)){
 
     Sizer=new wxBoxSizer(wxVERTICAL);
@@ -47,17 +64,7 @@ mainFrame::mainFrame() : wxFrame(nullptr, wxID_ANY, "Hello World",wxPoint(50,50)
 
     SetMenuBar(menuBar);
 
-
-    //text= new wxTextCtrl(this,wxID_ANY,"",wxDefaultPosition,wxDefaultSize,wxTE_MULTILINE);
-    nbtext = new wxStyledTextCtrl(this,wxID_ANY,wxDefaultPosition,wxDefaultSize,0,"");
-    nbtext->SetLexer(wxSTC_LEX_NULL);
-    // Set margin type for line numbers
-    nbtext->SetMarginType(1, wxSTC_MARGIN_NUMBER);
-    nbtext->SetUseVerticalScrollBar(true);
-    // Enable line number margin
-    nbtext->SetMarginMask(1,0);
-    nbtext->StyleSetBackground(wxSTC_STYLE_DEFAULT,wxColour(50,50,50));
-
+    Createeditor();
     Sizer->Add(nbtext,wxSizerFlags(1).Expand());
     Bind(wxEVT_MENU, &mainFrame::LoadContent, this, wxID_OPEN);
     Bind(wxEVT_MENU, &mainFrame::SaveContent, this, wxID_SAVE);
@@ -83,7 +90,7 @@ void mainFrame::LoadContent(wxCommandEvent& event)
 {
     wxFileDialog
             openFileDialog(this, _("Open text file"), "", "",
-                           "text files (*.txt)|*.txt|All files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+                           "text files (*.txt)|*.txt|All files (*.*)|*.*|Cpp files (*.cpp)|*.cpp", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
     if (openFileDialog.ShowModal() == wxID_CANCEL)
         return;     // the user changed idea...
 
