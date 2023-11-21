@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 3.26)
 project(Simple_texteditor)
 
-set(CMAKE_CXX_STANDARD 23)
-
-find_package(wxWidgets REQUIRED COMPONENTS core base)
-
+find_package(wxWidgets REQUIRED COMPONENTS core base stc)
 # Include wxWidgets headers
 include(${wxWidgets_USE_FILE})
+set(CMAKE_CXX_STANDARD 23)
 include_directories(header src resources)
 
 file(GLOB MY_SOURCES_FILES src/*.cpp)

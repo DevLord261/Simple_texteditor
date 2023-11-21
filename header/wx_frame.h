@@ -27,8 +27,11 @@ private:
     void LoadContent(wxCommandEvent& event);
     void SaveContent(wxCommandEvent& event);
     void OnSize(wxSizeEvent& event);
-    wxTextCtrl *text;
+    //wxTextCtrl *text;
+    wxStyledTextCtrl *nbtext;
     wxString fileName;
+    wxBoxSizer *Sizer;
+    int digits;
 
 };
 
