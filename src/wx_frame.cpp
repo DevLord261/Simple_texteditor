@@ -56,6 +56,7 @@ mainFrame::mainFrame() : wxFrame(nullptr, wxID_ANY, "Hello World",wxPoint(50,50)
     nbtext->SetUseVerticalScrollBar(true);
     // Enable line number margin
     nbtext->SetMarginMask(1,0);
+    nbtext->StyleSetBackground(wxSTC_STYLE_DEFAULT,wxColour(50,50,50));
 
     Sizer->Add(nbtext,wxSizerFlags(1).Expand());
     Bind(wxEVT_MENU, &mainFrame::LoadContent, this, wxID_OPEN);
