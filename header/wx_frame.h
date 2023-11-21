@@ -31,7 +31,6 @@ private:
     wxStyledTextCtrl *nbtext;
     wxString fileName;
     wxBoxSizer *Sizer;
-    int digits;
 
 };
 

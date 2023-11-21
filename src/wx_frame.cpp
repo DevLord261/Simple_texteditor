@@ -66,7 +66,7 @@ mainFrame::mainFrame() : wxFrame(nullptr, wxID_ANY, "Hello World",wxPoint(50,50)
 
     // Determine the maximum number of digits in your document
     int maxLineNumber = nbtext->GetLineCount();
-    digits = 1;
+    int digits = 1;
     while (maxLineNumber /= 10) {
         digits++;
     }
