@@ -20,6 +20,7 @@ void mainFrame::Createeditor() {
     // Enable syntax highlighting
     nbtext->StyleSetForeground(wxSTC_C_STRING, wxColour(0, 128, 0)); // Green for strings
     nbtext->StyleSetForeground(wxSTC_C_COMMENT, wxColour(128, 128, 128)); // Gray for comments
+    nbtext->StyleSetForeground(wxSTC_C_WORD, wxColour(0, 0, 0)); // Gray for comments
     nbtext->StyleSetBold(wxSTC_C_WORD, true); // Bold for keywords
     // Set margin type for line numbers
     nbtext->SetMarginType(1, wxSTC_MARGIN_NUMBER);
