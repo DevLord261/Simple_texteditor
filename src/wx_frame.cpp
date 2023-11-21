@@ -15,7 +15,7 @@ bool wx_frame::OnInit() {
 void mainFrame::Createeditor() {
     nbtext = new wxStyledTextCtrl(this,wxID_ANY,wxDefaultPosition,wxDefaultSize,0,"");
     nbtext->SetLexer(wxSTC_LEX_CPP);
-    nbtext->StyleSetForeground(wxSTC_C_IDENTIFIER, wxColour(128, 0, 0)); // Green for functions/methods
+    nbtext->StyleSetForeground(wxSTC_C_IDENTIFIER, wxColour(255, 0, 0)); // Green for functions/methods
     nbtext->StyleSetForeground(wxSTC_C_NUMBER, wxColour(0, 0, 255)); // Blue for functions/methods
     // Enable syntax highlighting
     nbtext->StyleSetForeground(wxSTC_C_STRING, wxColour(0, 128, 0)); // Green for strings
